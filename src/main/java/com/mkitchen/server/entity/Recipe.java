@@ -1,30 +1,37 @@
 package com.mkitchen.server.entity;
 
-import lombok.Builder;
-import lombok.Value;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-@Value
-@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
+@Table(name = "recipes")
 public class Recipe {
 
     @Id
-    @GeneratedValue
-    private int id;
+    @Column(name = "recipe_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
+    @Column(length = 20) // maximum size of name
     private String name;
-
-    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
-    private List<Ingredient> ingredients;
-
-    private String description;
-
+    private String instruction;
     private int totalTime;
-
     private int servings;
     private int caloriesPerServing;
     private String imageUrl;
+
+    @OneToMany(mappedBy = "recipe")
+    private Set<RecipeIngredient> recipeIngredients = new HashSet<>();
+
+
+
+
 }
