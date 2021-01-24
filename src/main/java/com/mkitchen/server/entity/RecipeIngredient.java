@@ -1,20 +1,26 @@
 package com.mkitchen.server.entity;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
 @Entity
+@Table(name = "recipe_ingredients")
 public class RecipeIngredient {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "recipe_ingredient_id")
     private Integer id;
+
+    @ManyToOne
+    @JoinColumn(name = "recipe_id")
     private Recipe recipe;
+
+    @ManyToOne
+    @JoinColumn(name = "ingredient_id")
     private Ingredient ingredient;
 
     private String usageAmount; // addtional column
