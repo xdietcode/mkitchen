@@ -23,7 +23,7 @@ public class Ingredient {
     private String name;
     private String url;
 
-    @OneToMany(mappedBy = "ingredient")
+    @OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
     private Set<RecipeIngredient> recipeIngredients = new HashSet<>();
 
     public Ingredient(Integer id, String name, String url) {
