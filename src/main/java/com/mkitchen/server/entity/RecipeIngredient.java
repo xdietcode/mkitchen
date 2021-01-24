@@ -7,27 +7,21 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @Entity
 public class RecipeIngredient {
     @Id
     @GeneratedValue
-    private int id;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "recipe_id")
+    private Integer id;
     private Recipe recipe;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "ingredient_id")
     private Ingredient ingredient;
 
-    private String usageAmount;
+    private String usageAmount; // addtional column
 
-//    public RecipeIngredient(Ingredient ingredient, String usageAmount) {
-//        this.ingredient = ingredient;
-//        this.usageAmount = usageAmount;
-//    }
+    public RecipeIngredient(Recipe recipe, Ingredient ingredient, String usageAmount) {
+        this.recipe = recipe;
+        this.ingredient = ingredient;
+        this.usageAmount = usageAmount;
+    }
 }
