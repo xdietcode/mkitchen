@@ -28,7 +28,7 @@ public class RecipeService {
 
     /**
      *
-     * @param recipe a recipe
+     * @param recipe recipe obj
      * @return recipe after saved into database
      */
     public Recipe save(Recipe recipe) {
@@ -41,7 +41,7 @@ public class RecipeService {
 
     /**
      *
-     * @param id
+     * @param id recipeId
      * @return a single recipe response
      */
     public SingleRecipeResponse getById(int id) {
@@ -78,6 +78,8 @@ public class RecipeService {
      *
      * @return all recipes from database
      */
+    // TODO: Get all recipes from database then map to a simplified version of Recipe response
+    // eg. Simplified recipe only has [ID, name, image url]
     public List<Recipe> getAll() {
         return recipeRepository.getAllRecipes();
     }
