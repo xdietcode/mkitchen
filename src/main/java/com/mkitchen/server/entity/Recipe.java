@@ -17,6 +17,7 @@ public class Recipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "recipe_id")
     private Integer id;
 
     @Column(length = 20) // maximum size of name
