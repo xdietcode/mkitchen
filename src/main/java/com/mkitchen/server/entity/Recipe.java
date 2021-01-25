@@ -28,8 +28,12 @@ public class Recipe {
     private int caloriesPerServing;
     private String imageUrl;
 
-    @OneToMany(mappedBy = "recipe")
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
     private Set<RecipeIngredient> recipeIngredients = new HashSet<>();
+
+    public void addRecipeIngredient(RecipeIngredient recipeIngredient){
+        this.recipeIngredients.add(recipeIngredient);
+    }
 
 
 
