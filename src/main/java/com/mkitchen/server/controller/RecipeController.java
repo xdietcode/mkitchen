@@ -1,16 +1,16 @@
 package com.mkitchen.server.controller;
 
 import com.mkitchen.server.dto.CreateRecipeRequest;
+import com.mkitchen.server.dto.SingleRecipeResponse;
 import com.mkitchen.server.entity.Ingredient;
+import com.mkitchen.server.entity.IngredientWrapper;
 import com.mkitchen.server.entity.Recipe;
 import com.mkitchen.server.repository.IngredientRepository;
 import com.mkitchen.server.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,5 +34,33 @@ public class RecipeController {
     @GetMapping("/getAllRecipes")
     private List<Recipe> getAllRecipes() {
         return recipeRepository.getAllRecipes();
+    }
+
+
+    @GetMapping("/getRecipeById/{id}")
+    private SingleRecipeResponse getRecipeById(@PathVariable Integer id) {
+        Recipe recipe = recipeRepository.findById(id).orElse(null);
+        List<IngredientWrapper> wrappers = new ArrayList<>();
+        for (Ingredient in : recipe.getIngredients()) {
+            IngredientWrapper wrapped = IngredientWrapper.builder()
+                    .name(in.getName())
+                    .amount(in.getAmount())
+                    .unit(in.getUnit())
+                    .url("tbd.com")
+                    .build();
+            wrappers.add(wrapped);
+        }
+
+        SingleRecipeResponse res = SingleRecipeResponse.builder()
+                .name(recipe.getName())
+                .caloriesPerServing(recipe.getCaloriesPerServing())
+                .imageUrl(recipe.getImageUrl())
+                .instruction(recipe.getInstruction())
+                .prepTime(recipe.getPrepTime())
+                .servings(recipe.getServings())
+                .ingredient(wrappers)
+                .build();
+
+        return res;
     }
 }
