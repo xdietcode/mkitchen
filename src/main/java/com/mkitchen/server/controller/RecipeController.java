@@ -1,6 +1,4 @@
 package com.mkitchen.server.controller;
-
-
 import com.mkitchen.server.dto.SingleRecipeResponse;
 import com.mkitchen.server.entity.AmazonUrl;
 import com.mkitchen.server.entity.Recipe;
