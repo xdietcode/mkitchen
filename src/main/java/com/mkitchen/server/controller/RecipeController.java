@@ -36,7 +36,7 @@ public class RecipeController {
     }
 
     @PostMapping("/postUrl")
-    private AmazonUrl addRecipe(@RequestBody AmazonUrl request) {
+    private AmazonUrl saveUrl(@RequestBody AmazonUrl request) {
         return urlService.save(request);
     }
 }
