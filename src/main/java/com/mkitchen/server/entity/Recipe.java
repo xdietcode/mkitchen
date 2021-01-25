@@ -17,7 +17,6 @@ public class Recipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "recipe_id")
     private Integer id;
 
     @Column(length = 20) // maximum size of name
@@ -29,6 +28,7 @@ public class Recipe {
     private String imageUrl;
 
     @OneToMany(targetEntity = Ingredient.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "recipe_id", referencedColumnName = "id")
     private Set<Ingredient> ingredients;
 
     public void addIngredient(Ingredient recipeIngredient) {
