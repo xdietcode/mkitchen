@@ -16,22 +16,23 @@ import java.util.Set;
 public class Recipe {
 
     @Id
-    @Column(name = "recipe_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(length = 20) // maximum size of name
     private String name;
     private String instruction;
-    private int totalTime;
+    private int prepTime;
     private int servings;
     private int caloriesPerServing;
     private String imageUrl;
 
-    @OneToMany(mappedBy = "recipe")
-    private Set<RecipeIngredient> recipeIngredients = new HashSet<>();
+    @OneToMany(targetEntity = Ingredient.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "recipe_id", referencedColumnName = "id")
+    private Set<Ingredient> ingredients;
 
-
-
+    public void addIngredient(Ingredient recipeIngredient) {
+        this.ingredients.add(recipeIngredient);
+    }
 
 }
