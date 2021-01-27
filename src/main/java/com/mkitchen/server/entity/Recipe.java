@@ -19,12 +19,13 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(length = 20) // maximum size of name
+    @Column(length = 128) // maximum size of name
     private String name;
     private String instruction;
     private int prepTime;
     private int servings;
     private int caloriesPerServing;
+    @Column(length = 512)
     private String imageUrl;
 
     @OneToMany(targetEntity = Ingredient.class, cascade = CascadeType.ALL)

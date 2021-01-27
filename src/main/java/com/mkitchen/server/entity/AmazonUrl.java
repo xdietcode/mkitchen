@@ -19,6 +19,7 @@ public class AmazonUrl {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(length = 512)
     private String url;
 
     @Column(unique = true)

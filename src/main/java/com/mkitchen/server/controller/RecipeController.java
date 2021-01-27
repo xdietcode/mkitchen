@@ -2,6 +2,7 @@ package com.mkitchen.server.controller;
 import com.mkitchen.server.dto.SingleRecipeResponse;
 import com.mkitchen.server.entity.AmazonUrl;
 import com.mkitchen.server.entity.Recipe;
+import com.mkitchen.server.entity.SimplifiedRecipe;
 import com.mkitchen.server.service.RecipeService;
 import com.mkitchen.server.service.UrlService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class RecipeController {
     }
 
     @GetMapping("/getAllRecipes")
-    private List<Recipe> getAllRecipes() {
+    private List<SimplifiedRecipe> getAllRecipes() {
         return recipeService.getAll();
     }
 

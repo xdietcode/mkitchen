@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
-public class IngredientWrapper {
 
+public class SimplifiedRecipe {
+    private int id;
     private String name;
-    private double amount;
-    private String unit;
-    private String url;
+    private String imageUrl;
+
 }

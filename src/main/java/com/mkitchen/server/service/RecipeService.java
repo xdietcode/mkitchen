@@ -1,10 +1,7 @@
 package com.mkitchen.server.service;
 
 import com.mkitchen.server.dto.SingleRecipeResponse;
-import com.mkitchen.server.entity.AmazonUrl;
-import com.mkitchen.server.entity.Ingredient;
-import com.mkitchen.server.entity.IngredientWrapper;
-import com.mkitchen.server.entity.Recipe;
+import com.mkitchen.server.entity.*;
 import com.mkitchen.server.repository.IngredientRepository;
 import com.mkitchen.server.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,7 +77,18 @@ public class RecipeService {
      */
     // TODO: Get all recipes from database then map to a simplified version of Recipe response
     // eg. Simplified recipe only has [ID, name, image url]
-    public List<Recipe> getAll() {
-        return recipeRepository.getAllRecipes();
+    public List<SimplifiedRecipe> getAll() {
+        //return recipeRepository.getAllRecipes();
+        List<Recipe> recipes = recipeRepository.getAllRecipes();
+        List<SimplifiedRecipe> simplifiedRecipes = new ArrayList<>();
+        for (Recipe re : recipes) {
+            SimplifiedRecipe sr = SimplifiedRecipe.builder()
+                    .id(re.getId())
+                    .name(re.getName())
+                    .imageUrl(re.getImageUrl())
+                    .build();
+            simplifiedRecipes.add(sr);
+        }
+        return simplifiedRecipes;
     }
 }
