@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class IngredientWrapper {
 
     private String name;
-    private int amount;
+    private double amount;
     private String unit;
     private String url;
 }
