@@ -36,6 +36,9 @@ public class RecipeController {
         return recipeService.getById(id);
     }
 
+    @GetMapping("/getRecipeByName/{recipeName}")
+    private List<SimplifiedRecipe> getRecipeByName(@PathVariable String recipeName) {return recipeService.getByName(recipeName);}
+
     @PostMapping("/postUrl")
     private AmazonUrl saveUrl(@RequestBody AmazonUrl request) {
         return urlService.save(request);

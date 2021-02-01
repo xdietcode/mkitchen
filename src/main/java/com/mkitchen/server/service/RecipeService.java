@@ -71,6 +71,7 @@ public class RecipeService {
         return res;
     }
 
+
     /**
      *
      * @return all recipes from database
@@ -80,14 +81,32 @@ public class RecipeService {
     public List<SimplifiedRecipe> getAll() {
         //return recipeRepository.getAllRecipes();
         List<Recipe> recipes = recipeRepository.getAllRecipes();
+        return getSimplifiedRecipes(recipes);
+    }
+
+    /**
+     *
+     * @param  recipeName
+     * @return a list of simplified recipes that contain the keyword name
+     */
+    public List<SimplifiedRecipe> getByName(String recipeName){
+        List<Recipe> recipesByName = recipeRepository.findByName(recipeName);
+        return getSimplifiedRecipes(recipesByName);
+    }
+
+    /**
+     *Method-getSimplifiedRecipes:
+     * extract the reused code both in "getAll" and "getByName"
+     */
+    private List<SimplifiedRecipe> getSimplifiedRecipes(List<Recipe> recipesByName) {
         List<SimplifiedRecipe> simplifiedRecipes = new ArrayList<>();
-        for (Recipe re : recipes) {
-            SimplifiedRecipe sr = SimplifiedRecipe.builder()
-                    .id(re.getId())
-                    .name(re.getName())
-                    .imageUrl(re.getImageUrl())
+        for (Recipe r : recipesByName) {
+            SimplifiedRecipe simplified = SimplifiedRecipe.builder()
+                    .id(r.getId())
+                    .name(r.getName())
+                    .imageUrl(r.getImageUrl())
                     .build();
-            simplifiedRecipes.add(sr);
+            simplifiedRecipes.add(simplified);
         }
         return simplifiedRecipes;
     }
