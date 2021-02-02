@@ -20,6 +20,6 @@ public class Ingredient {
 
     private String name; // e.g. sugar
 
-    private double amount; // addtional column
+    private Double amount; // addtional column
     private String unit; // e.g. g, tbsp
 }

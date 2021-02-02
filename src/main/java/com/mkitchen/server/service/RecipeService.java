@@ -2,8 +2,10 @@ package com.mkitchen.server.service;
 
 import com.mkitchen.server.dto.SingleRecipeResponse;
 import com.mkitchen.server.entity.*;
+import com.mkitchen.server.repository.CategoryRepository;
 import com.mkitchen.server.repository.IngredientRepository;
 import com.mkitchen.server.repository.RecipeRepository;
+import com.mkitchen.server.repository.SubCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,12 @@ public class RecipeService {
 
     @Autowired
     private UrlService urlService;
+
+    @Autowired
+    private SubCategoryRepository subCategoryRepository;
+
+    @Autowired
+    private CategoryRepository categoryRepository;
 
     /**
      *
@@ -60,10 +68,13 @@ public class RecipeService {
 
         SingleRecipeResponse res = SingleRecipeResponse.builder()
                 .name(recipe.getName())
-                .caloriesPerServing(recipe.getCaloriesPerServing())
+                .calories(recipe.getCalories())
                 .imageUrl(recipe.getImageUrl())
                 .instruction(recipe.getInstruction())
+                .description(recipe.getDescription())
                 .prepTime(recipe.getPrepTime())
+                .cookTime(recipe.getCookTime())
+                .totalTime(recipe.getPrepTime() + recipe.getCookTime())
                 .servings(recipe.getServings())
                 .ingredient(wrappers)
                 .build();
@@ -75,11 +86,20 @@ public class RecipeService {
      *
      * @return all recipes from database
      */
-    // TODO: Get all recipes from database then map to a simplified version of Recipe response
-    // eg. Simplified recipe only has [ID, name, image url]
     public List<SimplifiedRecipe> getAll() {
-        //return recipeRepository.getAllRecipes();
         List<Recipe> recipes = recipeRepository.getAllRecipes();
+        return simplifyRecipe(recipes);
+    }
+
+    public List<SimplifiedRecipe> getByCat(String cat, String subCat) {
+        Category category = categoryRepository.findByName(cat);
+        SubCategory subCategory = subCategoryRepository.findByName(subCat,category.getId());
+        List<Recipe> recipes = recipeRepository.getRecipesByCat(subCategory.getId());
+        return simplifyRecipe(recipes);
+    }
+
+    // extract a list of SimplifiedRecipe from a list of Recipe
+    private List<SimplifiedRecipe> simplifyRecipe(List<Recipe> recipes) {
         List<SimplifiedRecipe> simplifiedRecipes = new ArrayList<>();
         for (Recipe re : recipes) {
             SimplifiedRecipe sr = SimplifiedRecipe.builder()
