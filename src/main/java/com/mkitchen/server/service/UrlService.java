@@ -12,6 +12,7 @@ public class UrlService {
     private AmazonUrlRepository urlRepository;
 
     public AmazonUrl getByName(String name) {
+
         return urlRepository.findByName(name);
     }
 

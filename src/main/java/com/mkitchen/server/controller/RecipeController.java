@@ -40,4 +40,9 @@ public class RecipeController {
     private AmazonUrl saveUrl(@RequestBody AmazonUrl request) {
         return urlService.save(request);
     }
+
+    @GetMapping("/getRecipesByCat/{cat}/{subCat}")
+    private List<SimplifiedRecipe> getRecipesByCat(@PathVariable String cat, @PathVariable String subCat) {
+        return recipeService.getByCat(cat, subCat);
+    }
 }
