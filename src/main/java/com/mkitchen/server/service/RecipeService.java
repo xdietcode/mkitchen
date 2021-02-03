@@ -106,9 +106,6 @@ public class RecipeService {
      *Method-getSimplifiedRecipes:
      * extract the reused code both in "getAll" and "getByName"
      */
-    private List<SimplifiedRecipe> getSimplifiedRecipes(List<Recipe> recipesByName) {
-        return simplifyRecipe(recipes);
-    }
 
     public List<SimplifiedRecipe> getByCat(String cat, String subCat) {
         Category category = categoryRepository.findByName(cat);
@@ -120,7 +117,7 @@ public class RecipeService {
     // extract a list of SimplifiedRecipe from a list of Recipe
     private List<SimplifiedRecipe> simplifyRecipe(List<Recipe> recipes) {
         List<SimplifiedRecipe> simplifiedRecipes = new ArrayList<>();
-        for (Recipe r : recipesByName) {
+        for (Recipe r : recipes) {
             SimplifiedRecipe simplified = SimplifiedRecipe.builder()
                     .id(r.getId())
                     .name(r.getName())
