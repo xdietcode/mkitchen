@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@CrossOrigin(maxAge = 3600)
 @RestController
 public class RecipeController {
 
@@ -48,7 +48,13 @@ public class RecipeController {
     private AmazonUrl saveUrl(@RequestBody AmazonUrl request) {
         return urlService.save(request);
     }
-
+  
     @PostMapping("/postEmail")
     private Email saveEmail(@RequestBody Email email) {return emailService.subscribe(email);}
+
+    @GetMapping("/getRecipesByCat/{cat}/{subCat}")
+    private List<SimplifiedRecipe> getRecipesByCat(@PathVariable String cat, @PathVariable String subCat) {
+        return recipeService.getByCat(cat, subCat);
+    }
+
 }

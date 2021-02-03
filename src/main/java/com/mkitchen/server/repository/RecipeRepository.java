@@ -13,4 +13,6 @@ public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
     public List<Recipe> getAllRecipes();
     @Query("SELECT r FROM Recipe r WHERE r.name like %?1%")
     public List<Recipe> findByName(String name);
+    @Query("SELECT r FROM Recipe r INNER JOIN r.subCategories s WHERE s.id = ?1")
+    List<Recipe> getRecipesByCat(Integer subCatId);
 }
