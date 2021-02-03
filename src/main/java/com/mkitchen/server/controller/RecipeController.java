@@ -52,6 +52,11 @@ public class RecipeController {
     @PostMapping("/postEmail")
     private Email saveEmail(@RequestBody Email email) {return emailService.subscribe(email);}
 
+    @PostMapping("/postUrls")
+    private List<AmazonUrl> saveUrls(@RequestBody List<AmazonUrl> aUrls) {
+        return urlService.saveAll(aUrls);
+    }
+
     @GetMapping("/getRecipesByCat/{cat}/{subCat}")
     private List<SimplifiedRecipe> getRecipesByCat(@PathVariable String cat, @PathVariable String subCat) {
         return recipeService.getByCat(cat, subCat);

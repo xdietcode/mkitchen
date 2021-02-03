@@ -5,6 +5,8 @@ import com.mkitchen.server.repository.AmazonUrlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UrlService {
 
@@ -20,4 +22,7 @@ public class UrlService {
         return urlRepository.save(url);
     }
 
+    public List<AmazonUrl> saveAll(List<AmazonUrl> aUrls) {
+        return urlRepository.saveAll(aUrls);
+    }
 }
