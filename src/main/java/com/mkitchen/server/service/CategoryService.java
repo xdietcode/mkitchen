@@ -1,7 +1,7 @@
 package com.mkitchen.server.service;
 
 import com.mkitchen.server.entity.Category;
-import com.mkitchen.server.entity.SimplifiedSubCategory;
+import model.SimplifiedSubCategory;
 import com.mkitchen.server.entity.SubCategory;
 import com.mkitchen.server.repository.CategoryRepository;
 import com.mkitchen.server.repository.SubCategoryRepository;
