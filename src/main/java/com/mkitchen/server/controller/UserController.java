@@ -17,7 +17,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    private ResponseEntity<?> addRecipe(@RequestBody RegisterRequest request) {
+    private ResponseEntity<?> saveUser(@RequestBody RegisterRequest request) {
         return userService.save(request.getUsername(), request.getPassword());
     }
 }
