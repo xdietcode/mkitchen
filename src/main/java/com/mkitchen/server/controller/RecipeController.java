@@ -50,7 +50,9 @@ public class RecipeController {
     }
   
     @PostMapping("/postEmail")
-    private Email saveEmail(@RequestBody Email email) {return emailService.subscribe(email);}
+    private Email saveEmail(@RequestBody Email email) {
+        return emailService.subscribe(email);
+    }
 
     @PostMapping("/postUrls")
     private List<AmazonUrl> saveUrls(@RequestBody List<AmazonUrl> aUrls) {

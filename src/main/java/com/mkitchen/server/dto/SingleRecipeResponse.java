@@ -25,8 +25,6 @@ public class SingleRecipeResponse {
     private int servings;
     private int calories;
     private String imageUrl;
-    private Category category;
-    private SubCategory subCategory;
     List<IngredientWrapper> ingredient;
 
 }
