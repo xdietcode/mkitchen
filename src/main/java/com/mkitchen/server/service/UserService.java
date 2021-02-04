@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
@@ -15,7 +17,7 @@ public class UserService {
     public ResponseEntity<?> save(String username, String password) {
 
         // check if database has existing user
-        User userDb = userRepository.findByName(username);
+        Optional<User> userDb = userRepository.findByName(username);
         if (userDb == null) {
             User user = User.builder().userName(username)
                     .password(password)
