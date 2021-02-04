@@ -34,6 +34,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/getAllRecipes").permitAll()
                 .antMatchers("/getRecipeById/{id}").permitAll()
+                .antMatchers("/getRecipesByCat/{cat}/{subCat}").permitAll()
+                .antMatchers("/getRecipesByName/{recipeName}").permitAll()
+                .antMatchers("/postEmail").permitAll()
+                .antMatchers("/getCatByName/{cat}").permitAll()
+                .antMatchers("/getAllSubCats").permitAll()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/login").permitAll()
                 .anyRequest().authenticated().and().
