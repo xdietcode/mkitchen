@@ -18,14 +18,14 @@ public class UserService {
 
         // check if database has existing user
         Optional<User> userDb = userRepository.findByName(username);
-        if (userDb == null) {
+        if (userDb.isEmpty()) {
             User user = User.builder().userName(username)
                     .password(password)
                     .enabled(true)
                     .role("user").build();
-            System.out.println(userRepository.save(user));
-            return ResponseEntity.ok(String.format("User [%s] successfully registered. ", username));
+            userRepository.save(user);
+            return ResponseEntity.ok(String.format("User [%s] successfully registered.", username));
         }
-        return ResponseEntity.badRequest().body(String.format("User [%s] already exist.", username));
+        return ResponseEntity.badRequest().body(String.format("User [%s] already exists.", username));
     }
 }
