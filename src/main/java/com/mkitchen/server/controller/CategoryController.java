@@ -2,6 +2,7 @@ package com.mkitchen.server.controller;
 
 import com.mkitchen.server.entity.*;
 import com.mkitchen.server.service.CategoryService;
+import model.SimplifiedSubCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

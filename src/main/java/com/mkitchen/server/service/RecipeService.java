@@ -6,6 +6,8 @@ import com.mkitchen.server.repository.CategoryRepository;
 import com.mkitchen.server.repository.IngredientRepository;
 import com.mkitchen.server.repository.RecipeRepository;
 import com.mkitchen.server.repository.SubCategoryRepository;
+import model.IngredientWrapper;
+import model.SimplifiedRecipe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

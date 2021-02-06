@@ -1,4 +1,4 @@
-package com.mkitchen.server.entity;
+package model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

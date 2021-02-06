@@ -1,8 +1,6 @@
 package com.mkitchen.server.dto;
 
-import com.mkitchen.server.entity.Category;
-import com.mkitchen.server.entity.IngredientWrapper;
-import com.mkitchen.server.entity.SubCategory;
+import model.IngredientWrapper;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

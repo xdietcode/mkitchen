@@ -1,4 +1,4 @@
-package com.mkitchen.server.entity;
+package model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,10 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
-public class IngredientWrapper {
 
+public class SimplifiedSubCategory {
+    private Integer id;
     private String name;
-    private Double amount;
-    private String unit;
-    private String url;
 }
