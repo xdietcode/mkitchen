@@ -45,7 +45,7 @@ public class UserController {
                     new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
             );
         } catch (BadCredentialsException e) {
-            return ResponseEntity.badRequest().body("Username and/or password do not match");
+            return ResponseEntity.badRequest().body("Invalid username or password.");
         }
 
 

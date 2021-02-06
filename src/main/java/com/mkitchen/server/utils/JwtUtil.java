@@ -1,5 +1,6 @@
 package com.mkitchen.server.utils;
 
+import com.mkitchen.server.constant.Constant;
 import com.mkitchen.server.entity.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
