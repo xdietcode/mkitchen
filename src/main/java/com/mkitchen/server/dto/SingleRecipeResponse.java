@@ -1,6 +1,6 @@
 package com.mkitchen.server.dto;
 
-import model.IngredientWrapper;
+import com.mkitchen.server.model.IngredientWrapper;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

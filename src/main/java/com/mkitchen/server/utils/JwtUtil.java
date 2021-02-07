@@ -5,7 +5,7 @@ import com.mkitchen.server.entity.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import model.MyUserDetails;
+import com.mkitchen.server.model.MyUserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;

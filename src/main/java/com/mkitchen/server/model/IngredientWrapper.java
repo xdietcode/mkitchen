@@ -1,4 +1,4 @@
-package model;
+package com.mkitchen.server.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
+public class IngredientWrapper {
 
-public class SimplifiedRecipe {
-    private int id;
     private String name;
-    private String imageUrl;
-
+    private Double amount;
+    private String unit;
+    private String url;
 }
