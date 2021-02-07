@@ -3,7 +3,7 @@ import com.mkitchen.server.dto.SingleRecipeResponse;
 import com.mkitchen.server.entity.AmazonUrl;
 import com.mkitchen.server.entity.Email;
 import com.mkitchen.server.entity.Recipe;
-import model.SimplifiedRecipe;
+import com.mkitchen.server.model.SimplifiedRecipe;
 import com.mkitchen.server.service.EmailService;
 import com.mkitchen.server.service.RecipeService;
 import com.mkitchen.server.service.UrlService;

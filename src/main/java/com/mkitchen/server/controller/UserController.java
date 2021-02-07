@@ -6,7 +6,7 @@ import com.mkitchen.server.dto.RegisterRequest;
 import com.mkitchen.server.service.MyUserDetailsService;
 import com.mkitchen.server.service.UserService;
 import com.mkitchen.server.utils.JwtUtil;
-import model.MyUserDetails;
+import com.mkitchen.server.model.MyUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

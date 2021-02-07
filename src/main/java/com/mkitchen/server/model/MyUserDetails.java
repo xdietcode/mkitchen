@@ -1,4 +1,4 @@
-package model;
+package com.mkitchen.server.model;
 
 import com.mkitchen.server.entity.User;
 import org.springframework.security.core.GrantedAuthority;

@@ -2,7 +2,7 @@ package com.mkitchen.server.filters;
 
 import com.mkitchen.server.service.MyUserDetailsService;
 import com.mkitchen.server.utils.JwtUtil;
-import model.MyUserDetails;
+import com.mkitchen.server.model.MyUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;

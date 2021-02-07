@@ -2,7 +2,7 @@ package com.mkitchen.server.service;
 
 import com.mkitchen.server.entity.User;
 import com.mkitchen.server.repository.UserRepository;
-import model.MyUserDetails;
+import com.mkitchen.server.model.MyUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

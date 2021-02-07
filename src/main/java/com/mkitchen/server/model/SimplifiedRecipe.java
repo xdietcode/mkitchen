@@ -1,4 +1,4 @@
-package model;
+package com.mkitchen.server.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +10,9 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 
-public class SimplifiedSubCategory {
-    private Integer id;
+public class SimplifiedRecipe {
+    private int id;
     private String name;
+    private String imageUrl;
+
 }
