@@ -53,11 +53,15 @@ public class RecipeService {
      */
     public SingleRecipeResponse getById(int id) {
         Recipe recipe = recipeRepository.findById(id).orElse(null);
+
         if (recipe == null) {
             return null;
         }
+
+        List<Ingredient> ingredients = ingredientRepository.getIngredientsByRecipeId(recipe.getId());
+
         List<IngredientWrapper> wrappers = new ArrayList<>();
-        for (Ingredient in : recipe.getIngredients()) {
+        for (Ingredient in : ingredients) {
             AmazonUrl url = urlService.getByName(in.getName());
             IngredientWrapper wrapped = IngredientWrapper.builder()
                     .name(in.getName())
