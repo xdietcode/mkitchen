@@ -14,7 +14,7 @@ public class CategoryController {
     @Autowired
     private CategoryService catService;
 
-    @PostMapping("/postCat")
+    @PostMapping("/post/cat")
     private Category addCategory(@RequestBody Category cat) {
         System.out.println("Category Received: " + cat);
         return catService.save(cat);

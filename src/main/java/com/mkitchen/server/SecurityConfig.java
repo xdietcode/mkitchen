@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/getAllRecipes", "/getRecipeById/{id}", "/getRecipesByCat/{cat}/{subCat}", "/getRecipesByName/{recipeName}"
                 ,"/getCatByName/{cat}", "/getAllSubCats", "/register", "/login").permitAll()
-                .antMatchers("/postEmail", "/postUrls", "postRecipe", "/postCat").hasAnyAuthority("ADMIN")
+                .antMatchers("/post/**").hasAnyAuthority("ADMIN")
                 .anyRequest().authenticated().and().
                 exceptionHandling().accessDeniedPage("/403")
                 .and().sessionManagement()
