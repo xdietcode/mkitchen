@@ -1,45 +1,44 @@
 package com.mkitchen.server.model;
 
+import com.mkitchen.server.entity.Role;
 import com.mkitchen.server.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class MyUserDetails implements UserDetails {
 
-    private String userName;
-    private String password;
-    private boolean enabled;
-    private List<GrantedAuthority> authorities;
+    private User user;
 
     public MyUserDetails(User user) {
-        this.userName = user.getUserName();
-        this.password = user.getPassword();
-        this.enabled = user.isEnabled();
-        this.authorities = Arrays.asList(new SimpleGrantedAuthority(user.getRole()));
-
-//        this.authorities = Arrays.stream(user.getRole().split(","))
-//                .map(SimpleGrantedAuthority::new)
-//                .collect(Collectors.toList());
+        this.user = user;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        Set<Role> roles = user.getRoles();
+        List<SimpleGrantedAuthority> authorities = roles.stream()
+                .map(role -> role.getName())
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
+
         return authorities;
     }
 
     @Override
     public String getPassword() {
-        return password;
+        return user.getPassword();
+
     }
 
     @Override
     public String getUsername() {
-        return userName;
+        return user.getUserName();
     }
 
     @Override
@@ -59,7 +58,7 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return enabled;
+        return user.isEnabled();
     }
 
 
