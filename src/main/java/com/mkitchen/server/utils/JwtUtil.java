@@ -1,6 +1,7 @@
 package com.mkitchen.server.utils;
 
 import com.mkitchen.server.constant.Constant;
+import com.mkitchen.server.entity.Recipe;
 import com.mkitchen.server.entity.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -8,9 +9,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import com.mkitchen.server.model.MyUserDetails;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 
 @Service
@@ -53,17 +52,17 @@ public class JwtUtil {
         return (userName.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
-    public static void main(String[] args) {
-        JwtUtil util = new JwtUtil();
-        MyUserDetails details = new MyUserDetails(new User("alice", "1234", true, "user"));
-        System.out.println("details: " + details);
-        String token = util.generateToken(details);
-        System.out.println("token: " + token);
-
-        String username = util.extractUsername(token);
-        Date exp = util.extractExpiration(token);
-        System.out.println("Username: " + username);
-        System.out.println("Exp date: " + exp.toString());
-        System.out.println("Claims: " + util.extractAllClaims(token));
-    }
+//    public static void main(String[] args) {
+//        JwtUtil util = new JwtUtil();
+//        MyUserDetails details = new MyUserDetails(new User("alice", "1234", true, "user", new HashSet<Recipe>()));
+//        System.out.println("details: " + details);
+//        String token = util.generateToken(details);
+//        System.out.println("token: " + token);
+//
+//        String username = util.extractUsername(token);
+//        Date exp = util.extractExpiration(token);
+//        System.out.println("Username: " + username);
+//        System.out.println("Exp date: " + exp.toString());
+//        System.out.println("Claims: " + util.extractAllClaims(token));
+//    }
 }
