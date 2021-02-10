@@ -43,6 +43,9 @@ public class Recipe {
     )
     private Set<SubCategory> subCategories;
 
+    @OneToMany(mappedBy = "recipe")
+    Set<UserFavorites> favorites;
+
     public void addIngredient(Ingredient recipeIngredient) {
         this.ingredients.add(recipeIngredient);
     }

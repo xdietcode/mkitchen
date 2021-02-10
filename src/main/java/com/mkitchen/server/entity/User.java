@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Builder
 @Data
@@ -21,5 +22,8 @@ public class User {
     private String password;
     private boolean enabled;
     String role;
+
+    @OneToMany(mappedBy = "user")
+    private Set<UserFavorites> favorites;
 
 }
