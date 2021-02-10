@@ -33,10 +33,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/getAllRecipes", "/getRecipeById/{id}", "/getRecipesByCat/{cat}/{subCat}", "/getRecipesByName/{recipeName}"
-                ,"/getCatByName/{cat}", "/getAllSubCats", "/register", "/login").permitAll()
+                        , "/getCatByName/{cat}", "/getAllSubCats", "/register", "/login").permitAll()
                 .antMatchers("/post/**").hasAnyAuthority("ADMIN")
                 .anyRequest().authenticated().and().
-                exceptionHandling().accessDeniedPage("/403")
+                exceptionHandling()
                 .and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
