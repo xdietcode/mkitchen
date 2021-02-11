@@ -121,7 +121,7 @@ public class RecipeService {
     }
 
     // extract a list of SimplifiedRecipe from a list of Recipe
-    private List<SimplifiedRecipe> simplifyRecipe(List<Recipe> recipes) {
+    static List<SimplifiedRecipe> simplifyRecipe(List<Recipe> recipes) {
         List<SimplifiedRecipe> simplifiedRecipes = new ArrayList<>();
         for (Recipe r : recipes) {
             SimplifiedRecipe simplified = SimplifiedRecipe.builder()
