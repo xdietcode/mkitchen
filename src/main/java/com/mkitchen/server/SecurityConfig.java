@@ -11,7 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -33,17 +32,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/getAllRecipes").permitAll()
-                .antMatchers("/getRecipeById/{id}").permitAll()
-                .antMatchers("/getRecipesByCat/{cat}/{subCat}").permitAll()
-                .antMatchers("/getRecipesByName/{recipeName}").permitAll()
-                .antMatchers("/postEmail").permitAll()
-                .antMatchers("/getCatByName/{cat}").permitAll()
-                .antMatchers("/getAllSubCats").permitAll()
-                .antMatchers("/register").permitAll()
-                .antMatchers("/login").permitAll()
+                .antMatchers("/getAllRecipes", "/getRecipeById/{id}", "/getRecipesByCat/{cat}/{subCat}", "/getRecipesByName/{recipeName}"
+                        , "/getCatByName/{cat}", "/getAllSubCats", "/register", "/login").permitAll()
+                .antMatchers("/post/**").hasAnyAuthority("ADMIN")
                 .anyRequest().authenticated().and().
-                exceptionHandling().and().sessionManagement()
+                exceptionHandling()
+                .and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
         ;
