@@ -3,7 +3,10 @@ package com.mkitchen.server.controller;
 import com.mkitchen.server.dto.AuthRequest;
 import com.mkitchen.server.dto.AuthResponse;
 import com.mkitchen.server.dto.RegisterRequest;
+import com.mkitchen.server.dto.UserFavoriteRequest;
+import com.mkitchen.server.model.SimplifiedRecipe;
 import com.mkitchen.server.service.MyUserDetailsService;
+import com.mkitchen.server.service.UserFavoritesService;
 import com.mkitchen.server.service.UserService;
 import com.mkitchen.server.utils.JwtUtil;
 import com.mkitchen.server.model.MyUserDetails;
@@ -12,10 +15,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @CrossOrigin(maxAge = 3600)
 @RestController
@@ -32,6 +34,9 @@ public class UserController {
 
     @Autowired
     private JwtUtil jwtUtil;
+
+    @Autowired
+    private UserFavoritesService userFavoritesService;
 
     @PostMapping("/register")
     private ResponseEntity<?> saveUser(@RequestBody RegisterRequest request) {
@@ -55,5 +60,26 @@ public class UserController {
         final String jwt = jwtUtil.generateToken(userDetails);
 
         return ResponseEntity.ok(new AuthResponse(jwt));
+    }
+
+    @PostMapping("/post/fav")
+    private UserFavoriteRequest saveToFav(@RequestBody UserFavoriteRequest fav) {
+        return userFavoritesService.saveToFav(fav);
+    }
+
+    @DeleteMapping("/delete/fav")
+    private UserFavoriteRequest deleteFromFav(@RequestBody UserFavoriteRequest fav) {
+        return userFavoritesService.deleteFromFav(fav);
+    }
+
+    @GetMapping("/getFavRecipes/{username}")
+    private List<SimplifiedRecipe> getRecipeById(@PathVariable String username) {
+        return userFavoritesService.getFavRecipes(username);
+    }
+
+    @GetMapping("/getIsFav/{username}/{recipeId}")
+    private Boolean getIsFav(@PathVariable String username, @PathVariable Integer recipeId) {
+
+        return userFavoritesService.getIsFav(username, recipeId);
     }
 }

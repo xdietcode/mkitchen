@@ -46,8 +46,4 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe")
     Set<UserFavorites> favorites;
 
-    public void addIngredient(Ingredient recipeIngredient) {
-        this.ingredients.add(recipeIngredient);
-    }
-
 }
