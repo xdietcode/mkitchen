@@ -27,7 +27,6 @@ public class RecipeController {
 
     @PostMapping("/post/recipe")
     private Recipe addRecipe(@RequestBody Recipe recipe) {
-        System.out.println("Recipe Received: " + recipe);
         return recipeService.save(recipe);
     }
 

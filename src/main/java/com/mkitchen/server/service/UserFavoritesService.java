@@ -53,7 +53,6 @@ public class UserFavoritesService {
 
     public Boolean getIsFav (String username, Integer RecipeId) {
         List<UserFavorites> recipes = userFavRepository.getIsFav(username, RecipeId);
-        System.out.println("my recipes: xxx");
         if (recipes == null || recipes.size() == 0) {
             return false;
         }

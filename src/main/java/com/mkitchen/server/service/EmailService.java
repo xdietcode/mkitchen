@@ -15,7 +15,7 @@ public class EmailService {
         try{
             res = emailRepository.save(email);
         } catch (DataIntegrityViolationException e) {
-            System.out.println("Email already exists!");
+            return null;
         }
         return res;
     }
