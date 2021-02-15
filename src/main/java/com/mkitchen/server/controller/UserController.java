@@ -40,7 +40,7 @@ public class UserController {
 
     @PostMapping("/register")
     private ResponseEntity<?> saveUser(@RequestBody RegisterRequest request) {
-        return userService.save(request.getUsername(), request.getPassword());
+        return userService.save(request.getUsername(), request.getEmail(), request.getPassword());
     }
 
     @PostMapping("/login")

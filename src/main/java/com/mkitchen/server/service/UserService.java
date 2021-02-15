@@ -24,12 +24,13 @@ public class UserService {
     @Autowired
     private RoleRepository roleRepository;
 
-    public ResponseEntity<?> save(String username, String password) {
+    public ResponseEntity<?> save(String username, String email, String password) {
 
         // check if database has existing user
         Optional<User> userDb = userRepository.findByName(username);
         if (userDb.isEmpty()) {
             User user = User.builder().userName(username)
+                    .email(email)
                     .password(passwordEncoder.encode(password))
                     .enabled(true)
                     .roles(Arrays.asList(roleRepository.findById(1).orElse(null)).stream().collect(Collectors.toSet()))
