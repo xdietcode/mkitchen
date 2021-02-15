@@ -4,7 +4,9 @@ import com.mkitchen.server.dto.AuthRequest;
 import com.mkitchen.server.dto.AuthResponse;
 import com.mkitchen.server.dto.RegisterRequest;
 import com.mkitchen.server.dto.UserFavoriteRequest;
+import com.mkitchen.server.entity.Email;
 import com.mkitchen.server.model.SimplifiedRecipe;
+import com.mkitchen.server.service.EmailService;
 import com.mkitchen.server.service.MyUserDetailsService;
 import com.mkitchen.server.service.UserFavoritesService;
 import com.mkitchen.server.service.UserService;
@@ -37,6 +39,9 @@ public class UserController {
 
     @Autowired
     private UserFavoritesService userFavoritesService;
+
+    @Autowired
+    private EmailService emailService;
 
     @PostMapping("/register")
     private ResponseEntity<?> saveUser(@RequestBody RegisterRequest request) {
@@ -82,4 +87,10 @@ public class UserController {
 
         return userFavoritesService.getIsFav(username, recipeId);
     }
+
+    @PostMapping("/subscribe")
+    private Email saveEmail(@RequestBody Email email) {
+        return emailService.subscribe(email);
+    }
+
 }

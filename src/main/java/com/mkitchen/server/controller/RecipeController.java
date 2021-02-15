@@ -22,9 +22,6 @@ public class RecipeController {
     @Autowired
     private UrlService urlService;
 
-    @Autowired
-    private EmailService emailService;
-
     @PostMapping("/post/recipe")
     private Recipe addRecipe(@RequestBody Recipe recipe) {
         return recipeService.save(recipe);
@@ -42,11 +39,6 @@ public class RecipeController {
 
     @GetMapping("/getRecipesByName/{recipeName}")
     private List<SimplifiedRecipe> getRecipesByName(@PathVariable String recipeName) {return recipeService.getByName(recipeName);}
-  
-    @PostMapping("/post/email")
-    private Email saveEmail(@RequestBody Email email) {
-        return emailService.subscribe(email);
-    }
 
     @PostMapping("/post/urls")
     private List<AmazonUrl> saveUrls(@RequestBody List<AmazonUrl> aUrls) {
