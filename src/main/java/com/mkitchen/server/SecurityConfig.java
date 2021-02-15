@@ -32,17 +32,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
+                .antMatchers("/post/fav", "/delete/fav", "/getFavRecipes/{username}",
+                        "/getIsFav/{username}/{recipeId}").hasAnyAuthority("ADMIN", "USER")
+                .antMatchers("/post/**").hasAnyAuthority("ADMIN")
                 .antMatchers("/**").permitAll()
-//                .antMatchers("/getAllRecipes", "/getRecipeById/{id}", "/getRecipesByCat/{cat}/{subCat}", "/getRecipesByName/{recipeName}"
-//                        , "/getCatByName/{cat}", "/getAllSubCats", "/register", "/login").permitAll()
-//                .antMatchers("/post/**").hasAnyAuthority("ADMIN")
-//                .antMatchers("/post/fav", "/delete/fav", "/getFavRecipes/{username}", "/getIsFav/{username}/{recipeId}").hasAnyAuthority("ADMIN","USER")
-                .anyRequest().authenticated().and().
-                        exceptionHandling()
+                .anyRequest().authenticated()
+                .and()
+                .exceptionHandling()
                 .and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
-        ;
     }
 
     @Bean
