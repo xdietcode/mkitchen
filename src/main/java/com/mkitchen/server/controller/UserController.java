@@ -67,22 +67,22 @@ public class UserController {
         return ResponseEntity.ok(new AuthResponse(jwt));
     }
 
-    @PostMapping("/post/fav")
+    @PostMapping("/user/post/fav")
     private UserFavoriteRequest saveToFav(@RequestBody UserFavoriteRequest fav) {
         return userFavoritesService.saveToFav(fav);
     }
 
-    @DeleteMapping("/delete/fav")
+    @DeleteMapping("/user/delete/fav")
     private UserFavoriteRequest deleteFromFav(@RequestBody UserFavoriteRequest fav) {
         return userFavoritesService.deleteFromFav(fav);
     }
 
-    @GetMapping("/getFavRecipes/{username}")
+    @GetMapping("/user/getFavRecipes/{username}")
     private List<SimplifiedRecipe> getRecipeById(@PathVariable String username) {
         return userFavoritesService.getFavRecipes(username);
     }
 
-    @GetMapping("/getIsFav/{username}/{recipeId}")
+    @GetMapping("/user/getIsFav/{username}/{recipeId}")
     private Boolean getIsFav(@PathVariable String username, @PathVariable Integer recipeId) {
 
         return userFavoritesService.getIsFav(username, recipeId);
