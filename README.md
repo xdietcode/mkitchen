@@ -9,7 +9,7 @@
 <h2 align="center">About</h2>
 <br>
 
-Time-consuming is one of the headache problems people are facing now when preparing for their meals. Minimalist Kitchen website offers great collections of easy 30 minutes or less recipes, featured categories, recipes related groceries and kitchenware shopping, which can make cooking fun and easy!
+Time-consuming is one of the most concerned problems people are facing now when preparing for their meals. Minimalist Kitchen website offers great collections of easy 30 minutes or less recipes, featured categories, recipes related groceries and kitchenware shopping, which can make cooking fun and easy!
 
 **Our Mission:**
 
@@ -49,7 +49,8 @@ and save you the hassle of shopping related products from different other places
 <br>
 <h2 align="center">Future Scope</h2>
 
-Implement fully functional shopping cart that allow users to shopping products in-site.
+Implement fully functional shopping cart that allow users to shopping products in-site with a smooth payment checkout process.
+
 Implement inventory module to manage products
 
 
