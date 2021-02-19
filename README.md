@@ -21,8 +21,8 @@ and save you the hassle of shopping related products from different other places
 <h2 align="center">Features</h2>
 <br>
 
-*  Stand-alone server application deployed to Amazon EC2
-*  Scalable database using Amazon RDS
+*  Stand-alone server application deployed to AWS EC2
+*  Scalable database using AWS RDS
 *  Search recipes by category/subcategory or keyword.
 *  User register/login.
 *  New user email subscription.
