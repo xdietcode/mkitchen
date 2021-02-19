@@ -25,12 +25,12 @@ The MVP of this website aims to demonstrate how users can navigate the website. 
 <br>
 <br>
 <h2 align="center">Tech/Languages</h2>
-<p align="center">
+<div align="center">
   `Spring-Boot` `Java` `RestController` `Spring Data JPA` `Hibernate` 
- </p>
-<p align="center">
+ </div>
+<div align="center">
 `JWT` `Spring Security` `MySQL` `AWS RDS` `AWS EC2`
- </p>
+ </div>
 
 <br>
 <br>
