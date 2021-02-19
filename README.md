@@ -31,13 +31,14 @@ and save you the hassle of shopping related products from different other places
 *  Restrict access based on user roles
 *  Protect web services with JWT authentication
   
-
+<br>
 <div align="center">
   <img align="center" src="https://github.com/xdietcode/mkitchen/blob/readme/src/ext/mk_authorized.png">
 </div>
+<br>
 <p align="center"> restrict access to user with valid token </p>
 
-<br>
+
 <br>
 <br>
 <h2 align="center">Tech/Languages</h2>
