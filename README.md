@@ -7,8 +7,9 @@
 <br>
 <br>
 <h2 align="center">About</h2>
+<br>
 
-Time-consuming is one of the biggest problems people are facing now when preparing for their meals. Minimalist Kitchen website offers great collections of easy 30 minutes or less recipes, featured categories, recipes related groceries and kitchenware shopping, which can make cooking fun and easy!
+Time-consuming is one of the headache problems people are facing now when preparing for their meals. Minimalist Kitchen website offers great collections of easy 30 minutes or less recipes, featured categories, recipes related groceries and kitchenware shopping, which can make cooking fun and easy!
 
 **Our Mission:**
 
@@ -18,16 +19,21 @@ and save you the hassle of shopping related products from different other places
 <br>
 <br>
 <h2 align="center">Features</h2>
+<br>
 
-*  Search recipes by extensive selection of category/subcategory or keyword.
-*  User register/login
+*  Search recipes by category/subcategory or keyword.
+*  User register/login.
+*  New user email subscription.
 *  User like/dislike a recipe to/from favorite list
-* Upload recipes
-* Restrict access based on user roles ('Admin', 'User')
-* Support email subscription of customers
+*  Upload recipes
+*  Restrict access based on user roles ('Admin', 'User')
+*  Provide purchasing links for ingredients/cookingware
+
+
 <br>
 <br>
 <h2 align="center">Tech/Languages</h2>
+<br>
 <div align="center">
   
   `Spring-Boot` `Java` `RestController` `Spring Data JPA` `Hibernate` 
@@ -42,5 +48,9 @@ and save you the hassle of shopping related products from different other places
 <br>
 <br>
 <h2 align="center">Future Scope</h2>
+
+Implement fully functional shopping cart that allow users to shopping products in-site.
+Implement inventory module to manage products
+
 
 
