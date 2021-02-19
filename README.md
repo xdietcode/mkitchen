@@ -1,7 +1,7 @@
 <h1 align="center"> Minimalist Kitchen</h1>
 <p align="center">Spring-boot powered application to provide back-end REST services</p>
 <div align="center">
-  <img align="center" src="https://github.com/xdietcode/mkitchen/blob/final/src/ext/mk_main.png">
+  <img align="center" src="https://github.com/xdietcode/mkitchen/blob/readme/src/ext/mk_main.png">
 </div>
 <br>
 <br>
@@ -21,13 +21,20 @@ and save you the hassle of shopping related products from different other places
 <h2 align="center">Features</h2>
 <br>
 
+*  Stand-alone server application deployed to Amazon EC2
+*  Scalable database using Amazon RDS
 *  Search recipes by category/subcategory or keyword.
 *  User register/login.
 *  New user email subscription.
 *  User like/dislike a recipe to/from favorite list
 *  Upload recipes
 *  Restrict access based on user roles ('Admin', 'User')
-*  Provide purchasing links for ingredients/cookingware
+*  Protect web services with JWT authentication
+*  
+<p align="center"> restrict access to user with valid token </p>
+<div align="center">
+  <img align="center" src="https://github.com/xdietcode/mkitchen/blob/readme/src/ext/mk_authorized.png">
+</div>
 
 
 <br>
