@@ -7,9 +7,10 @@
 <br>
 <br>
 <h2 align="center">About</h2>
-Time-consuming is one of the biggest problems when people prepare for their meals of the day. Minimalist Kitchen website offers easy 30 minutes or less recipe collections, recipes related groceries and kitchenware one-stop online shopping, which can take a lot of stress off.
+Time-consuming is one of the biggest problems when people prepare for their meals of the day. Minimalist Kitchen website offers easy 30 minutes or less recipe collections, recipes related groceries and kitchenware one-stop online shopping, which can make cooking fun and easy.
 
-The MVP of this website aims to demonstrate how users can navigate the website. After the website MVP is established, add-on features developments can help to grow the number of visitors and optimize their journey in the early stage.
+**Our Mission:**
+Minimalist Kitchen aims to provide customers the best collections of recipes that can be used to cook delicious foods with minimal ingredients requirements, accompanied with our upcoming add-on features  to help optimize their recipe searching and shopping related ingredients experience all in one.
 <br>
 <br>
 <br>
@@ -26,12 +27,16 @@ The MVP of this website aims to demonstrate how users can navigate the website. 
 <br>
 <h2 align="center">Tech/Languages</h2>
 <div align="center">
+  
   `Spring-Boot` `Java` `RestController` `Spring Data JPA` `Hibernate` 
+  
  </div>
+ 
 <div align="center">
+  
 `JWT` `Spring Security` `MySQL` `AWS RDS` `AWS EC2`
- </div>
 
+ </div>
 <br>
 <br>
 <br>
