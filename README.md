@@ -49,7 +49,7 @@ and save you the hassle of shopping related products from different other places
 <br>
 <h2 align="center">Future Scope</h2>
 
-Implement a fully functional shopping cart that allow users to shopping products in-site with a smooth payment checkout process. Create inventory module to manage products. A mobile version of app.
+Implement a fully functional shopping cart that allow users to shopping products in-site with a smooth payment checkout process. A mobile version of app.
 
 
 
