@@ -1,24 +1,54 @@
 <h1 align="center"> Minimalist Kitchen</h1>
 <p align="center">Spring-boot powered application to provide back-end REST services</p>
 
+<div align="center">
+  <img align="center" src="https://github.com/xdietcode/mkitchen/blob/final/src/ext/mk_main.png">
+</div>
+<br>
+<br>
+<br>
 <h2 align="center">About</h2>
-Time-consuming is one of the biggest problems when people prepare for their meals of the day. Minimalist Kitchen website offers easy 30 minutes or less recipe collections, recipes related groceries and kitchenware one-stop online shopping, which can take a lot of stress off.
+<br>
 
-The MVP of this website aims to demonstrate how users can navigate the website. After the website MVP is established, add-on features developments can help to grow the number of visitors and optimize their journey in the early stage.
+Time-consuming is one of the most concerned problems people are facing now when preparing for their meals. Minimalist Kitchen website offers great collections of easy 30 minutes or less recipes, featured categories, recipes related groceries and kitchenware shopping, which can make cooking fun and easy!
 
+**Our Mission:**
+
+Minimalist Kitchen aims to provide customers the best collections of recipes that can be used to cook delicious foods with minimal ingredients needed in 30 minutes or less. With our upcoming add-on features such as in-site shopping cart, we believe our services will optimize the experience of recipe searching by providing you easy and quick-ready recipes,
+and save you the hassle of shopping related products from different other places.
+<br>
+<br>
+<br>
 <h2 align="center">Features</h2>
+<br>
 
 *  Search recipes by category/subcategory or keyword.
-*  User register/login
+*  User register/login.
+*  New user email subscription.
 *  User like/dislike a recipe to/from favorite list
-* Upload recipes
-* Restrict access based on user roles ('Admin', 'User')
-* Support email subscription of customers
+*  Upload recipes
+*  Restrict access based on user roles ('Admin', 'User')
+*  Provide purchasing links for ingredients/cookingware
 
+
+<br>
+<br>
 <h2 align="center">Tech/Languages</h2>
-
-`Spring-Boot` `Java` `RestController` `Spring Data JPA` `Hibernate` 
+<br>
+<div align="center">
+  
+  `Spring-Boot` `Java` `Spring Data JPA` `Hibernate` 
+  
+ </div>
+ 
+<div align="center">
+  
 `JWT` `Spring Security` `MySQL` `AWS RDS` `AWS EC2`
 
-
+ </div>
+<br>
+<br>
 <h2 align="center">Future Scope</h2>
+
+Implement a fully functional shopping cart that allow users to shopping products in-site with a smooth payment checkout process. A mobile version of app.
+
