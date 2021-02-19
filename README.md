@@ -13,7 +13,7 @@ Time-consuming is one of the most concerned problems people are facing now when 
 
 **Our Mission:**
 
-Minimalist Kitchen aims to provide customers the best collections of recipes that can be used to cook delicious foods with minimal ingredients needed in 30 minutes or less. With our upcoming add-on features such as extended recipes subcategories, we believe our services will optimize the experience of recipe searching by providing you easy and quick-ready recipes,
+Minimalist Kitchen aims to provide customers the best collections of recipes that can be used to cook delicious foods with minimal ingredients needed in 30 minutes or less. With our upcoming add-on features such as in-site shopping cart, we believe our services will optimize the experience of recipe searching by providing you easy and quick-ready recipes,
 and save you the hassle of shopping related products from different other places.
 <br>
 <br>
