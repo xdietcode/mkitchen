@@ -27,17 +27,17 @@ public class RecipeController {
         return recipeService.save(recipe);
     }
 
-    @GetMapping("/getAllRecipes")
+    @GetMapping("/recipes/all")
     private List<SimplifiedRecipe> getAllRecipes() {
         return recipeService.getAll();
     }
 
-    @GetMapping("/getRecipeById/{id}")
+    @GetMapping("/recipes/id/{id}")
     private SingleRecipeResponse getRecipeById(@PathVariable Integer id) {
         return recipeService.getById(id);
     }
 
-    @GetMapping("/getRecipesByName/{recipeName}")
+    @GetMapping("/recipes/name/{recipeName}")
     private List<SimplifiedRecipe> getRecipesByName(@PathVariable String recipeName) {return recipeService.getByName(recipeName);}
 
     @PostMapping("/post/urls")
@@ -45,7 +45,7 @@ public class RecipeController {
         return urlService.saveAll(aUrls);
     }
 
-    @GetMapping("/getRecipesByCat/{cat}/{subCat}")
+    @GetMapping("/recipes/cat/{cat}/{subCat}")
     private List<SimplifiedRecipe> getRecipesByCat(@PathVariable String cat, @PathVariable String subCat) {
         return recipeService.getByCat(cat, subCat);
     }

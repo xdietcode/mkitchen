@@ -20,7 +20,7 @@ public class CategoryController {
         return catService.save(cat);
     }
 
-    @GetMapping("/getCatByName/{cat}")
+    @GetMapping("/recipes/cat/name/{cat}")
     private Category getCatByName(@PathVariable String cat) {
         return catService.getByName(cat);
     }
@@ -30,7 +30,7 @@ public class CategoryController {
     * internal error if return a list of SubCategory. SubCategory is huge because
     * there is a many to many relationship to Recipe.
     ****************************************************************************/
-    @GetMapping("/getAllSubCats")
+    @GetMapping("/recipes/cat/subs")
     private List<SimplifiedSubCategory> getAllSubCats() {
         return catService.getAllSubCategories();
     }
