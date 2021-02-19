@@ -11,14 +11,15 @@
 Time-consuming is one of the biggest problems people are facing now when preparing for their meals. Minimalist Kitchen website offers great collections of easy 30 minutes or less recipes, featured categories, recipes related groceries and kitchenware shopping, which can make cooking fun and easy!
 
 **Our Mission:**
-Minimalist Kitchen aims to provide customers the best collections of recipes that can be used to cook delicious foods with minimal ingredients needed. With our upcoming add-on features, we believe our services will optimize the experience of recipe searching by providing you easy and quick-ready recipes,
+
+Minimalist Kitchen aims to provide customers the best collections of recipes that can be used to cook delicious foods with minimal ingredients needed in 30 minutes or less. With our upcoming add-on features such as extended recipes subcategories, we believe our services will optimize the experience of recipe searching by providing you easy and quick-ready recipes,
 and save you the hassle of shopping related products from different other places.
 <br>
 <br>
 <br>
 <h2 align="center">Features</h2>
 
-*  Search recipes by category/subcategory or keyword.
+*  Search recipes by extensive selection of category/subcategory or keyword.
 *  User register/login
 *  User like/dislike a recipe to/from favorite list
 * Upload recipes
