@@ -36,7 +36,7 @@ and save you the hassle of shopping related products from different other places
 <br>
 <div align="center">
   
-  `Spring-Boot` `Java` `RestController` `Spring Data JPA` `Hibernate` 
+  `Spring-Boot` `Java` `Spring Data JPA` `Hibernate` 
   
  </div>
  
