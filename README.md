@@ -30,7 +30,7 @@ and save you the hassle of shopping related products from different other places
 *  Upload recipes
 *  Restrict access based on user roles ('Admin', 'User')
 *  Protect web services with JWT authentication
-*  
+  
 <p align="center"> restrict access to user with valid token </p>
 <div align="center">
   <img align="center" src="https://github.com/xdietcode/mkitchen/blob/readme/src/ext/mk_authorized.png">
