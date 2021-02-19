@@ -7,10 +7,12 @@
 <br>
 <br>
 <h2 align="center">About</h2>
-Time-consuming is one of the biggest problems when people prepare for their meals of the day. Minimalist Kitchen website offers easy 30 minutes or less recipe collections, recipes related groceries and kitchenware one-stop online shopping, which can make cooking fun and easy.
+
+Time-consuming is one of the biggest problems people are facing now when preparing for their meals. Minimalist Kitchen website offers great collections of easy 30 minutes or less recipes, featured categories, recipes related groceries and kitchenware shopping, which can make cooking fun and easy!
 
 **Our Mission:**
-Minimalist Kitchen aims to provide customers the best collections of recipes that can be used to cook delicious foods with minimal ingredients requirements, accompanied with our upcoming add-on features  to help optimize their recipe searching and shopping related ingredients experience all in one.
+Minimalist Kitchen aims to provide customers the best collections of recipes that can be used to cook delicious foods with minimal ingredients needed. With our upcoming add-on features, we believe our services will optimize the experience of recipe searching by providing you easy and quick-ready recipes,
+and save you the hassle of shopping related products from different other places.
 <br>
 <br>
 <br>
@@ -22,7 +24,6 @@ Minimalist Kitchen aims to provide customers the best collections of recipes tha
 * Upload recipes
 * Restrict access based on user roles ('Admin', 'User')
 * Support email subscription of customers
-<br>
 <br>
 <br>
 <h2 align="center">Tech/Languages</h2>
@@ -39,5 +40,6 @@ Minimalist Kitchen aims to provide customers the best collections of recipes tha
  </div>
 <br>
 <br>
-<br>
 <h2 align="center">Future Scope</h2>
+
+
