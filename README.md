@@ -1,7 +1,7 @@
 <h1 align="center"> Minimalist Kitchen</h1>
 <p align="center">Spring-boot powered application to provide back-end REST services</p>
 <div align="center">
-  <img align="center" src="https://github.com/xdietcode/mkitchen/blob/readme/src/ext/mk_main.png">
+  <img align="center" src="https://github.com/xdietcode/mkitchen/blob/main/src/ext/mk_main.png?raw=true">
 </div>
 <br>
 <br>
@@ -33,7 +33,7 @@ and save you the hassle of shopping related products from different other places
   
 <br>
 <div align="center">
-  <img align="center" src="https://github.com/xdietcode/mkitchen/blob/readme/src/ext/mk_authorized.png">
+  <img align="center" src="https://github.com/xdietcode/mkitchen/blob/main/src/ext/mk_authorized.png?raw=true">
 </div>
 <br>
 <p align="center"> restrict access to user with valid token </p>
