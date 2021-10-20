@@ -31,34 +31,8 @@ and save you the hassle of shopping related products from different other places
 *  Restrict access based on user roles
 *  Protect web services with JWT authentication
   
-<br>
-<div align="center">
-  <img align="center" src="https://github.com/xdietcode/mkitchen/blob/main/src/ext/mk_authorized.png?raw=true">
-</div>
-<br>
-<p align="center"> restrict access to user with valid token </p>
 
 
-<br>
-<br>
-<h2 align="center">Tech/Languages</h2>
-<br>
-<div align="center">
-  
-  `Spring-Boot` `Java` `Spring Data JPA` `Hibernate` 
-  
- </div>
- 
-<div align="center">
-  
-`JWT` `Spring Security` `MySQL` `AWS RDS` `AWS EC2`
-
- </div>
-<br>
-<br>
-<h2 align="center">Future Scope</h2>
-
-Implement a fully functional shopping cart that allow users to shopping products in-site with a smooth payment checkout process. A mobile version of app.
 
 
 
